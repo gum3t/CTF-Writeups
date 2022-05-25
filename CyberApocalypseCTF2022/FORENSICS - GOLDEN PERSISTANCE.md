@@ -19,11 +19,11 @@ Then we can proceed to decode it. To achieve this goal, we can use the following
 
 	echo "base64_encoded_string" | base64 -d
 
-![echo "base64_encoded_string" | base64 -d](images/FORENSICS-GoldenPersistance-3.png "echo "base64_encoded_string" | base64 -d")
+![echo "base64_encoded_string" | base64 -d](images/FORENSICS-GoldenPersistance-3.png 'echo "base64_encoded_string" | base64 -d')
 
 The output consists in a little Powershell script. Even though the format is not very good, at the last part of the script we can see that it takes some values from the MS registry file and concatenates them. Later it tries to decrypt the sequence.
 
-```
+```powershell
 function encr {
     param(
         [Byte[]]$data,
@@ -108,7 +108,7 @@ As we can see, once the file is opened, getting the values is pretty straight fo
 Now we only need to modify the given script and fix a few things.
 After some debugging we finally obtain the following:
 
-```
+```powershell
 function encr {
     param([Byte[]]$data,[Byte[]]$key)
 
